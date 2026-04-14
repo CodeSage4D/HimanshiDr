@@ -75,10 +75,11 @@ To run this elite experience locally:
 
 ## 📄 License & Contact
 
-This project is the professional property of Dr. Himanshi Gupta.
+This project is the professional property of **Dr. Himanshi Gupta**.
 
-- **Developer**: [Antigravity AI (via Karann)](https://github.com/CodeSage4D)
 - **Owner**: Dr. Himanshi Gupta (BAMS)
+- **Creative Agency**: [AURXON](https://github.com/AURXON)
+- **Lead Developer**: [Karann Mishra](https://github.com/CodeSage4D)
 
 ---
 

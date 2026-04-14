@@ -16,8 +16,11 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Himanshi Gupta | Redefining Healthcare Experience",
-  description: "Elite healthcare professional dedicated to modern medical innovation and care.",
+  title: "Dr. Himanshi Gupta | Redefining Healthcare Experience",
+  description: "Elite Ayurvedic Physician dedicated to modern medical innovation and care.",
+  authors: [{ name: "Karann Mishra" }, { name: "AURXON" }],
+  creator: "AURXON",
+  publisher: "Dr. Himanshi Gupta",
 };
 
 export default function RootLayout({

@@ -64,9 +64,17 @@ export default function Footer() {
               <a href="#" className="hover:text-foreground transition-colors">Cookies</a>
             </div>
 
-            <p className="text-[10px] text-body/20 font-bold uppercase tracking-[0.4em]">
-              © 2026 HIMANSHI GUPTA • ELITE CARE
-            </p>
+            <div className="flex flex-col items-center md:items-end gap-2 text-right">
+              <p className="text-[10px] text-body/40 font-bold uppercase tracking-[0.4em]">
+                © 2026 Himanshi Gupta • Elite Care
+              </p>
+              <p className="text-[9px] text-body/30 font-medium uppercase tracking-[0.2em]">
+                Designed & Developed by <span className="text-cyan-500/60 font-black">AURXON</span>
+              </p>
+              <p className="text-[8px] text-body/20 font-medium uppercase tracking-[0.1em]">
+                Developer: Karann Mishra
+              </p>
+            </div>
           </div>
         </div>
       </div>
