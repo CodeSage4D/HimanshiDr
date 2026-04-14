@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { GraduationCap, Award, Stethoscope, Sparkles } from "lucide-react";
 import ChapterHeader from "@/components/ChapterHeader";
 
