@@ -5,87 +5,53 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Dr. Adrian Thorne",
-    role: "Chief of Surgery, St. Jude Medical",
-    text: "The integration of these diagnostic systems has revolutionized our patient intake process, reducing turnaround time by 40% while increasing precision.",
-    avatar: "AT",
+    name: "Dr. Alok Verma",
+    role: "Senior Consultant, AIIMS",
+    content: "Dr. Himanshi's approach to clinical diagnostics bridges traditional symptomatic analysis with modern precision in a way rarely seen in the new generation of BAMS scholars.",
   },
   {
-    name: "Sarah Jenkins",
-    role: "CEO, Bio-Logic Systems",
-    text: "Working with this team has been a masterclass in elite medical design. Every interface feels intuitive, futuristic, and deeply reliable.",
-    avatar: "SJ",
-  },
-  {
-    name: "Prof. Michael Chen",
-    role: "Healthcare Innovation Lead",
-    text: "Truly redefining what healthcare experiences should look like in the 21st century. Elite, transparent, and undeniably powerful.",
-    avatar: "MC",
+    name: "Sanjay Singhania",
+    role: "Clinical Partner",
+    content: "The level of empathy and data-driven rigor Dr. Himanshi brings to her practice has redefined our collaborative clinical outcomes.",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-32 px-6 bg-background overflow-hidden transition-colors duration-500">
-      {/* Background Glows */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyan-600/5 dark:bg-cyan-600/10 blur-[150px] -translate-y-1/2" />
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-600/5 dark:bg-blue-600/10 blur-[150px] translate-y-1/2" />
+    <section id="testimonials" className="py-32 px-6 bg-background transition-colors duration-500 overflow-hidden">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div>
+            <span className="text-cyan-500 font-bold uppercase tracking-[0.4em] text-[10px] mb-6 block">The Legacy</span>
+            <h2 className="text-5xl md:text-7xl font-black text-foreground tracking-tighter leading-tight mb-8">
+              VOICES OF <br />
+              <span className="text-gradient-cyan">TRUST.</span>
+            </h2>
+            <p className="text-body/60 text-lg font-light leading-relaxed max-w-md">
+              The true testament to elite care is the trust of fellow clinicians and the transformations of those we heal.
+            </p>
+          </div>
 
-      <div className="mx-auto max-w-7xl relative z-10">
-        <div className="text-center mb-24">
-          <motion.span 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-cyan-600 dark:text-cyan-400 font-bold uppercase tracking-[0.3em] text-xs mb-4 block"
-          >
-            Client Voices
-          </motion.span>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl font-extrabold text-foreground md:text-6xl"
-          >
-            Elite <span className="text-gradient-cyan">Endorsements.</span>
-          </motion.h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              className="neon-hover relative p-10 rounded-[40px] bg-white dark:bg-black border border-slate-100 dark:border-white/5 shadow-lg shadow-slate-200/50 dark:shadow-none transition-all group"
-            >
-              <div className="absolute top-10 right-10 text-slate-100 dark:text-white/5 group-hover:text-cyan-500/10 transition-colors">
-                <Quote className="w-16 h-16" strokeWidth={3} />
-              </div>
-              
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-600 to-blue-700 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-cyan-500/20">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <h4 className="text-foreground font-bold text-lg tracking-tight">{testimonial.name}</h4>
-                    <p className="text-cyan-600 dark:text-cyan-400/80 text-sm font-medium">{testimonial.role}</p>
-                  </div>
-                </div>
-                
-                <p className="text-slate-500 dark:text-white/80 leading-relaxed font-light italic">
-                  "{testimonial.text}"
+          <div className="space-y-8">
+            {testimonials.map((t, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="p-12 rounded-[40px] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 relative"
+              >
+                <Quote className="absolute top-8 right-8 w-12 h-12 text-cyan-500/10" />
+                <p className="text-xl text-foreground font-medium italic leading-relaxed mb-8 relative z-10">
+                  "{t.content}"
                 </p>
-              </div>
-
-              {/* Hover Glow Edge */}
-              <div className="absolute inset-0 rounded-[40px] border border-cyan-500/0 group-hover:border-cyan-500/40 transition-all duration-500" />
-            </motion.div>
-          ))}
+                <div>
+                  <p className="text-lg font-bold text-foreground">{t.name}</p>
+                  <p className="text-sm text-body/40 font-bold uppercase tracking-widest">{t.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

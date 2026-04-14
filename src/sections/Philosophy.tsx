@@ -2,30 +2,31 @@
 
 import { motion } from "framer-motion";
 import { Leaf, Wind, Flame, Droplets } from "lucide-react";
+import ChapterHeader from "@/components/ChapterHeader";
 
 const principles = [
   {
     icon: <Leaf className="h-6 w-6" />,
     title: "Nature's Rhythm",
-    desc: "Aligning the body with natural cycles and seasonal shifts.",
+    desc: "Aligning the biological clock with circadian rhythms and seasonal shifts to optimize hormonal and metabolic health.",
     color: "bg-emerald-500",
   },
   {
     icon: <Wind className="h-6 w-6" />,
     title: "Vata (Space & Air)",
-    desc: "Restoring movement, creativity, and nervous system balance.",
+    desc: "Governing movement and the nervous system. Our goal is to stabilize creativity and calm the autonomic response.",
     color: "bg-blue-400",
   },
   {
     icon: <Flame className="h-6 w-6" />,
     title: "Pitta (Fire & Water)",
-    desc: "Managing metabolism, digestion, and systemic clarity.",
+    desc: "The engine of metabolism and digestion. We refine inflammatory responses to ensure systemic clarity and energy.",
     color: "bg-orange-500",
   },
   {
     icon: <Droplets className="h-6 w-6" />,
     title: "Kapha (Earth & Water)",
-    desc: "Building stability, immunity, and structural integrity.",
+    desc: "The foundation of structure and immunity. We build resilience, hydration, and long-term structural integrity.",
     color: "bg-teal-500",
   },
 ];
@@ -34,19 +35,11 @@ export default function Philosophy() {
   return (
     <section id="philosophy" className="py-32 px-6 bg-background relative overflow-hidden transition-colors duration-500">
       <div className="mx-auto max-w-7xl relative z-10">
-        <div className="flex flex-col items-center mb-24 text-center">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-5xl font-black text-foreground md:text-7xl tracking-tighter"
-          >
-            OUR <span className="text-gradient-cyan text-glow">PHILOSOPHY.</span>
-          </motion.h2>
-          <p className="mt-8 text-xl text-body/60 max-w-2xl font-light">
-            Beyond treatment, we facilitate a biological renaissance through the synergy of nature and science.
-          </p>
-        </div>
+        <ChapterHeader 
+          number="2"
+          title="THE ANCIENT WISDOM"
+          subtitle="Beyond modern diagnostics, we facilitate a biological renaissance by synchronizing the body's internal architecture with the elemental forces of nature."
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {principles.map((p, i) => (

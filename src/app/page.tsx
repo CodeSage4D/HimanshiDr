@@ -1,5 +1,6 @@
 import OrganicAura from "@/components/OrganicAura";
 import Navbar from "@/components/Navbar";
+import StoryHUD from "@/components/StoryHUD";
 import Hero from "@/sections/Hero";
 import About from "@/sections/About";
 import Services from "@/sections/Services";
@@ -18,11 +19,11 @@ export default function Home() {
       <div className="relative z-10">
         <Hero />
         <About />
-        <Services />
-        <Showcase />
-        <Journey />
         <Philosophy />
+        <Journey />
+        <Services />
         <Care />
+        <Showcase />
         <Testimonials />
         <Footer />
       </div>

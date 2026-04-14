@@ -1,79 +1,66 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Leaf, Wind, Flame, Droplets } from "lucide-react";
+import { Brain, Heart, Zap, ShieldCheck } from "lucide-react";
+import ChapterHeader from "@/components/ChapterHeader";
 
-const principles = [
+const services = [
   {
-    icon: <Leaf className="h-6 w-6" />,
-    title: "Nature's Rhythm",
-    desc: "Aligning the body with natural cycles and seasonal shifts.",
-    color: "bg-emerald-500",
+    icon: <Brain />,
+    title: "Neuro-Equilibrium",
+    desc: "Advanced protocols for neurological harmony, cognitive clarity, and autonomic resilience through systemic herbal precision.",
   },
   {
-    icon: <Wind className="h-6 w-6" />,
-    title: "Vata (Space & Air)",
-    desc: "Restoring movement, creativity, and nervous system balance.",
-    color: "bg-blue-400",
+    icon: <Heart />,
+    title: "Vascular Vitality",
+    desc: "Optimizing cardiovascular performance and metabolic circulation using ancient lipid-management wisdom.",
   },
   {
-    icon: <Flame className="h-6 w-6" />,
-    title: "Pitta (Fire & Water)",
-    desc: "Managing metabolism, digestion, and systemic clarity.",
-    color: "bg-orange-500",
+    icon: <Zap />,
+    title: "Metabolic Mastery",
+    desc: "Refining digestive efficiency and systemic energy through customized clinical nutrition and biochemical balancing.",
   },
   {
-    icon: <Droplets className="h-6 w-6" />,
-    title: "Kapha (Earth & Water)",
-    desc: "Building stability, immunity, and structural integrity.",
-    color: "bg-teal-500",
+    icon: <ShieldCheck />,
+    title: "Immuno-Architecture",
+    desc: "Building deep biological resilience and structural integrity against modern environmental stressors.",
   },
 ];
 
-export default function Philosophy() {
+export default function Services() {
   return (
-    <section id="philosophy" className="py-32 px-6 bg-background relative overflow-hidden transition-colors duration-500">
-      <div className="mx-auto max-w-7xl relative z-10">
-        <div className="flex flex-col items-center mb-24 text-center">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-5xl font-black text-foreground md:text-7xl tracking-tighter"
-          >
-            OUR <span className="text-gradient-cyan text-glow">PHILOSOPHY.</span>
-          </motion.h2>
-          <p className="mt-8 text-xl text-body/60 max-w-2xl font-light">
-            Beyond treatment, we facilitate a biological renaissance through the synergy of nature and science.
-          </p>
-        </div>
+    <section id="services" className="py-32 px-6 bg-white dark:bg-background transition-colors duration-500 overflow-hidden">
+      <div className="mx-auto max-w-7xl">
+        <ChapterHeader 
+          number="4"
+          title="THE CLINICAL SKILL"
+          subtitle="True expertise is the synergy of diagnostic depth and therapeutic precision. We don't just treat; we architect biological longevity."
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {principles.map((p, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {services.map((service, index) => (
             <motion.div
-              key={p.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="p-12 rounded-[40px] bg-white dark:bg-black border border-slate-100 dark:border-white/5 neon-hover group"
+              key={index}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              whileHover={{ y: -10 }}
+              className="p-12 rounded-[40px] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 group cursor-pointer transition-all duration-500"
             >
-              <div className="mb-8 w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20 shadow-[0_0_20px_rgba(0,240,255,0.1)] group-hover:scale-110 transition-transform duration-500">
-                <div className="text-cyan-400">
-                  {p.icon}
-                </div>
+              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-black flex items-center justify-center text-cyan-500 mb-8 border border-slate-100 dark:border-white/10 shadow-lg group-hover:bg-cyan-500 group-hover:text-white transition-all duration-500">
+                {service.icon}
               </div>
-              <h3 className="text-2xl font-black text-foreground mb-4">{p.title}</h3>
-              <p className="text-body/60 font-light leading-relaxed">
-                {p.desc}
+              <h3 className="text-3xl font-black text-foreground mb-6 uppercase tracking-tight">{service.title}</h3>
+              <p className="text-body/60 text-lg font-light leading-relaxed mb-8">
+                {service.desc}
               </p>
+              <div className="flex items-center gap-4 text-cyan-500 font-bold uppercase tracking-widest text-xs">
+                <span>View Protocol</span>
+                <div className="h-[1px] w-8 bg-cyan-500/30 group-hover:w-16 transition-all duration-500" />
+              </div>
             </motion.div>
           ))}
         </div>
       </div>
-      
-      {/* Structural Accent */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[1px] bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent -rotate-12 pointer-events-none" />
     </section>
   );
 }

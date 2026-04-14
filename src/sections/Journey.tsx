@@ -1,46 +1,45 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { GraduationCap, Award, Stethoscope, Sparkles } from "lucide-react";
+import ChapterHeader from "@/components/ChapterHeader";
 
 const milestones = [
   {
     icon: <GraduationCap />,
     year: "2021",
     title: "The Genesis",
-    desc: "Commenced BAMS journey, exploring the depth of Ayurvedic sciences.",
+    desc: "Commenced BAMS journey, exploring the clinical depth and theoretical foundations of Ayurvedic sciences.",
   },
   {
     icon: <Award />,
     year: "2023",
     title: "Academic Excellence",
-    desc: "Top performer in Samhita and Basic Principles of Ayurveda.",
+    desc: "Advanced research in Samhita and Basic Principles, achieving top clinical distinction in systematic therapy.",
   },
   {
     icon: <Stethoscope />,
     year: "2025",
     title: "Clinical Exposure",
-    desc: "Intensive clinical rotations, focusing on patient-centric holistic healing.",
+    desc: "Intensive clinical rotations in multispeciality settings, mastering the patient-centric holistic healing approach.",
   },
   {
     icon: <Sparkles />,
     year: "2026",
     title: "The Future",
-    desc: "Final Year BAMS Scholar – Preparing to heal the world.",
+    desc: "Final Year BAMS Scholar – Bridging clinical diagnostics with ancient therapeutic precision.",
   },
 ];
 
 export default function Journey() {
   return (
-    <section id="journey" className="py-32 px-6 bg-background transition-colors duration-500">
+    <section id="journey" className="py-32 px-6 bg-background transition-colors duration-500 overflow-hidden">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-24">
-          <span className="text-cyan-500 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">The Evolution</span>
-          <motion.h2 className="text-5xl font-black text-foreground md:text-7xl tracking-tighter">
-            A PATH OF <br />
-            <span className="text-gradient-cyan">PRECISION.</span>
-          </motion.h2>
-        </div>
+        <ChapterHeader 
+          number="3"
+          title="THE CLINICAL EVOLUTION"
+          subtitle="Precision is not a goal; it's a path. Witness the transformation from dedicated scholar to an elite practitioner of modern Ayurveda."
+        />
 
         <div className="relative">
           {/* Line */}

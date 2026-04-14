@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { useStory } from "@/hooks/useStory";
 
 const steps = [
   { id: 1, text: "Ancient wisdom.", sub: "Preserved for the modern age." },
@@ -12,6 +13,7 @@ const steps = [
 export default function Hero() {
   const [step, setStep] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
+  const { goToChapter } = useStory();
 
   useEffect(() => {
     if (step < steps.length) {
@@ -25,7 +27,7 @@ export default function Hero() {
   }, [step]);
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col items-center justify-center px-6 text-center overflow-hidden">
+    <section id="hero" className="relative flex min-h-[100svh] flex-col items-center justify-center px-6 text-center overflow-hidden">
       <AnimatePresence mode="wait">
         {step < steps.length ? (
           <motion.div
@@ -88,9 +90,9 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.8 }}
               className="mt-14"
             >
-              <a
-                href="#about"
-                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-slate-900 dark:bg-white px-12 py-5 text-white dark:text-black transition-all active:scale-95 neon-hover"
+              <button
+                onClick={() => goToChapter(1)}
+                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-slate-900 dark:bg-white px-12 py-5 text-white dark:text-black transition-all active:scale-95 neon-hover cursor-pointer"
               >
                 <span className="relative z-10 font-bold tracking-wider">Start the Journey</span>
                 <div className="absolute inset-0 -z-10 translate-y-full bg-cyan-500 transition-transform duration-500 group-hover:translate-y-0" />
@@ -101,7 +103,7 @@ export default function Hero() {
                 >
                   →
                 </motion.span>
-              </a>
+              </button>
             </motion.div>
 
           </motion.div>
@@ -128,4 +130,3 @@ export default function Hero() {
     </section>
   );
 }
-

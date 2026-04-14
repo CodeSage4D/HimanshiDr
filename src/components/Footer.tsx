@@ -25,7 +25,7 @@ export default function Footer() {
 
           <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 items-center">
             <motion.a
-              href="tel:+1234567890"
+              href="tel:+917804895074"
               whileHover={{ scale: 1.05 }}
               className="group flex items-center gap-6 px-8 py-4 rounded-3xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 transition-all hover:border-cyan-500/50"
             >
@@ -34,7 +34,7 @@ export default function Footer() {
               </div>
               <div className="text-left">
                 <p className="text-[10px] uppercase tracking-widest text-body/40 font-bold">Call Now</p>
-                <p className="text-lg font-bold text-foreground">+1 (234) 567-890</p>
+                <p className="text-lg font-bold text-foreground">+91 78048 95074</p>
               </div>
             </motion.a>
 
@@ -59,8 +59,8 @@ export default function Footer() {
             </Link>
             
             <div className="flex gap-8 text-xs font-bold uppercase tracking-[0.2em] text-body/40">
-              <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-              <a href="#" className="hover:text-foreground transition-colors">Terms</a>
+              <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+              <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
               <a href="#" className="hover:text-foreground transition-colors">Cookies</a>
             </div>
 
